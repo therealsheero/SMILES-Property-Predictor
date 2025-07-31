@@ -62,7 +62,7 @@ How are we predicitng?
    ```bash
    git clone https://github.com/therealsheero/SMILES-Property-Predictor.git
    cd smiles-property-predictor
-````
+
 
 2. Make sure your Python version is **3.10**. (Avoid 3.12+ for RDKit + DeepChem compatibility)
 
@@ -126,8 +126,4 @@ Toxicity Probability: 0.399
 * [DeepChem](https://deepchem.io/)
 * [QED Paper (Bickerton et al., 2012)](https://pubs.acs.org/doi/10.1021/jm300118s)
 
----
 
-
-Let me know if you'd like me to add a `requirements.txt`, a Gradio or Streamlit UI version, or badge formatting at the top (`Built With RDKit · DeepChem · XGBoost`, etc).
-```
