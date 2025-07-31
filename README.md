@@ -1,5 +1,5 @@
 
-# 🧬 SMILES Property Predictor
+# SMILES Property Predictor
 
 A Python-based tool to predict **molecular properties** directly from **SMILES (Simplified Molecular Input Line Entry System)** strings using a combination of **RDKit** (rule-based cheminformatics) and **Machine Learning models** for advanced predictions like **solubility (LogS)** and **toxicity**.
 
