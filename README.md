@@ -5,7 +5,7 @@ A Python-based tool to predict **molecular properties** directly from **SMILES (
 
 ---
 
-## 🧪 What Are SMILES?
+##  What Are SMILES?
 
 **SMILES** (Simplified Molecular Input Line Entry System) is a compact string notation used to describe the structure of chemical molecules. For example:
 ```
@@ -18,7 +18,7 @@ These strings encode atoms, bonds, rings, and branches in a form that can be eas
 
 ---
 
-## 🧠 What This Project Does
+##  What This Project Does
 
 Given a SMILES string, this tool predicts **12 important molecular properties**, including:
 
@@ -56,7 +56,7 @@ How are we predicitng?
 
 ---
 
-## 🔧 Installation
+##  Installation
 
 1. Clone the repo:
    ```bash
@@ -68,7 +68,7 @@ How are we predicitng?
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 .
@@ -83,7 +83,7 @@ How are we predicitng?
 
 ---
 
-### ✅ Run the full property predictor:
+###  Run the full property predictor:
 
 ```bash
 python Main_tool.py
@@ -91,7 +91,7 @@ python Main_tool.py
 
 Enter any SMILES string when prompted (e.g. `CC(=O)Oc1ccccc1C(=O)O` for aspirin).
 
-### 📄 Example output:
+###  Example output:
 
 ```
 Canonical SMILES: CC(=O)Oc1ccccc1C(=O)O
@@ -110,7 +110,7 @@ Toxicity Probability: 0.399
 
 ---
 
-## 📊 How the Models Work
+##  How the Models Work
 
 * **Rule-based properties** are directly extracted using RDKit.
 * **Solubility** is predicted using a **regression model** trained on the ESOL dataset with **XGBoost**.
@@ -118,7 +118,7 @@ Toxicity Probability: 0.399
 
 ---
 
-## 📚 References
+##  References
 
 * [RDKit Documentation](https://www.rdkit.org/)
 * [ESOL Dataset](https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/delaney-processed.csv)
