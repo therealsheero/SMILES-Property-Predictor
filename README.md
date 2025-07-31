@@ -22,6 +22,23 @@ These strings encode atoms, bonds, rings, and branches in a form that can be eas
 
 Given a SMILES string, this tool predicts **12 important molecular properties**, including:
 
+|  No. | Property              |  Description                                      | Why It's Important                                                              |
+| -----: | ------------------------ | ---------------------------------------------------- | ------------------------------------------------------------------------------- |
+|      1 | **Canonical SMILES**     | A standardized form of the SMILES string.            | Helps ensure consistency when comparing or storing molecules.                   |
+|      2 | **Molecular Formula**    | Elemental composition (e.g. C9H8O4).                 | Fundamental chemical identity — needed in molecular databases and search.       |
+|      3 | **Molecular Weight**     | Total molecular mass in Daltons (g/mol).             | Useful for pharmacokinetics and dosing calculations.                            |
+|      4 | **LogP**                 | Octanol–water partition coefficient (lipophilicity). | Measures how hydrophobic a compound is — affects absorption, distribution, etc. |
+|      5 | **H-Bond Donors**        | Count of -OH or -NH groups.                          | Affects solubility and interaction with biological targets.                     |
+|      6 | **H-Bond Acceptors**     | Count of oxygen or nitrogen atoms with lone pairs.   | Important for molecular recognition and binding.                                |
+|      7 | **TPSA (Å²)**            | Topological Polar Surface Area.                      | Estimates a molecule’s ability to cross membranes (e.g., blood-brain barrier).  |
+|      8 | **Rotatable Bonds**      | Number of flexible single bonds.                     | Higher values indicate more flexibility — affects oral bioavailability.         |
+|      9 | **Formal Charge**        | Net ionic charge on the molecule.                    | Impacts solubility, reactivity, and membrane permeability.                      |
+|     10 | **QED Score**            | Quantitative Estimate of Drug-likeness (0–1).        | A machine-learned score combining multiple rules — higher is better for drugs.  |
+|     11 | **Solubility (LogS)**    | Aqueous solubility (in Log mol/L).                   | Critical ADME property — low solubility limits drug formulation.                |
+|     12 | **Toxicity Probability** | Probability of being toxic to human cells (0–1).     | Prevents late-stage drug failure and ensures safety during drug discovery.      |
+
+How are we predicitng?
+
 | Property               | Type                   | Source   |
 |------------------------|------------------------|----------|
 | Canonical SMILES       | Rule-based             | RDKit    |
@@ -43,17 +60,11 @@ Given a SMILES string, this tool predicts **12 important molecular properties**,
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourusername/smiles-property-predictor.git
+   git clone https://github.com/therealsheero/SMILES-Property-Predictor.git
    cd smiles-property-predictor
 ````
 
-2. Install required dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Make sure your Python version is **3.10**. (Avoid 3.12+ for RDKit + DeepChem compatibility)
+2. Make sure your Python version is **3.10**. (Avoid 3.12+ for RDKit + DeepChem compatibility)
 
 ---
 
@@ -61,23 +72,21 @@ Given a SMILES string, this tool predicts **12 important molecular properties**,
 
 ```
 .
-├── main_predictor.py           # Master script to run predictions
+├── Main_tool.ipynb           # Master script to run predictions
 ├── Solubility_Predictor.py     # ML model for solubility (LogS)
 ├── Toxicity_Predictor.py       # ML model for toxicity
 ├── models/
-│   ├── logS_model.pkl          # Pretrained solubility model
+│   ├── logS_model_xgb_hybrid.pkl          # Pretrained solubility model
 │   └── tox21_pretrained/       # DeepChem model for toxicity
-└── test_run.py                 # Example script with sample SMILES
+└── Example_Sol/Tox.py          # Example script with sample SMILES
 ```
 
 ---
 
-## ▶️ How to Use
-
 ### ✅ Run the full property predictor:
 
 ```bash
-python main_predictor.py
+python Main_tool.py
 ```
 
 Enter any SMILES string when prompted (e.g. `CC(=O)Oc1ccccc1C(=O)O` for aspirin).
@@ -119,28 +128,6 @@ Toxicity Probability: 0.399
 
 ---
 
-## 🙌 Future Add-ons
-
-* Web dashboard (Streamlit/Gradio)
-* Batch SMILES upload and export
-* More ML-based properties (e.g., bioactivity, synthetic accessibility)
-
----
-
-## 🧠 Author
-
-**Sheero** — Exploring AI in Drug Discovery and Bioinformatics 🚀
-Let’s build BioMedGPT together!
-
----
-
-## 📜 License
-
-MIT License. Free to use and contribute!
-
-```
-
----
 
 Let me know if you'd like me to add a `requirements.txt`, a Gradio or Streamlit UI version, or badge formatting at the top (`Built With RDKit · DeepChem · XGBoost`, etc).
 ```
