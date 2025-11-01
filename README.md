@@ -120,10 +120,7 @@ Toxicity Probability: 0.399
 
 ##  References
 
-* [RDKit Documentation](https://www.rdkit.org/)
 * [ESOL Dataset](https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/delaney-processed.csv)
 * [Tox21 Toxicology Dataset](https://tripod.nih.gov/tox21/)
-* [DeepChem](https://deepchem.io/)
-* [QED Paper (Bickerton et al., 2012)](https://pubs.acs.org/doi/10.1021/jm300118s)
 
 
