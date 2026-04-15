@@ -3,7 +3,6 @@ from rdkit import Chem
 import torch
 import torch.nn.functional as F
 
-# Load pretrained model from HuggingFace
 model_name = "seyonec/ChemBERTa-zinc-base-v1"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=2)
